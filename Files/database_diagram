@@ -5,6 +5,7 @@ dept_name varchar
 
 dept_emp
 -
+id serial pk
 emp_no varchar fk - emp.emp_no
 dept_no varchar fk >-< dept.dept_no
 from_date varchar
@@ -12,6 +13,7 @@ to_date varchar
 
 dept_manager
 -
+id serial pk
 dept_no varchar fk -< dept.dept_no
 emp_no varchar fk - emp.emp_no
 from_date varchar
@@ -28,6 +30,7 @@ hire_date varchar
 
 salaries
 -
+id serial pk
 emp_no varchar fk - emp.emp_no
 salary int
 from_date varchar
@@ -35,6 +38,7 @@ to_date varchar
 
 titles
 -
+id serial pk
 emp_no varchar fk - emp.emp_no
 title varchar
 from_date varchar

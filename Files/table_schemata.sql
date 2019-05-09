@@ -11,17 +11,25 @@ CREATE TABLE "dept" (
 );
 
 CREATE TABLE "dept_emp" (
+    "id" serial   NOT NULL,
     "emp_no" varchar   NOT NULL,
     "dept_no" varchar   NOT NULL,
     "from_date" varchar   NOT NULL,
-    "to_date" varchar   NOT NULL
+    "to_date" varchar   NOT NULL,
+    CONSTRAINT "pk_dept_emp" PRIMARY KEY (
+        "id"
+     )
 );
 
 CREATE TABLE "dept_manager" (
+    "id" serial   NOT NULL,
     "dept_no" varchar   NOT NULL,
     "emp_no" varchar   NOT NULL,
     "from_date" varchar   NOT NULL,
-    "to_date" varchar   NOT NULL
+    "to_date" varchar   NOT NULL,
+    CONSTRAINT "pk_dept_manager" PRIMARY KEY (
+        "id"
+     )
 );
 
 CREATE TABLE "emp" (
@@ -37,17 +45,25 @@ CREATE TABLE "emp" (
 );
 
 CREATE TABLE "salaries" (
+    "id" serial   NOT NULL,
     "emp_no" varchar   NOT NULL,
     "salary" int   NOT NULL,
     "from_date" varchar   NOT NULL,
-    "to_date" varchar   NOT NULL
+    "to_date" varchar   NOT NULL,
+    CONSTRAINT "pk_salaries" PRIMARY KEY (
+        "id"
+     )
 );
 
 CREATE TABLE "titles" (
+    "id" serial   NOT NULL,
     "emp_no" varchar   NOT NULL,
     "title" varchar   NOT NULL,
     "from_date" varchar   NOT NULL,
-    "to_date" varchar   NOT NULL
+    "to_date" varchar   NOT NULL,
+    CONSTRAINT "pk_titles" PRIMARY KEY (
+        "id"
+     )
 );
 
 ALTER TABLE "dept_emp" ADD CONSTRAINT "fk_dept_emp_emp_no" FOREIGN KEY("emp_no")
