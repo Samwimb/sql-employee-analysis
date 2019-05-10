@@ -42,3 +42,16 @@ select last_name, count(last_name) as "last_name_frequency"
 from emp
 group by last_name
 order by "last_name_frequency" desc;
+
+-- BONUS: Average Salary by Title
+select titles.title, avg(salaries.salary) as "average_salary"
+from titles
+join emp on emp.emp_no = titles.emp_no
+join salaries on salaries.emp_no = emp.emp_no
+group by titles.title
+order by average_salary;
+
+
+
+
+
